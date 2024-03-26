@@ -2,3 +2,37 @@
 
 * { box-sizing: border-box;}
 
+:root {
+    --cor-titulo: #4d4d4d;
+    --cor-texto: #333;
+    --cor-escura: #000;
+    --cor-clara: #fff;
+    --cor-intermediaria: #ECECEC;
+}
+
+html { font-size: 16px;}
+
+body { 
+    color: var(--cor-texto);
+    font-family: 'Noto Sans', sans serif;
+    background-color: var(--cor-clara);
+}
+
+body, h1, h2, p, figure, nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Para imagem ficar responsiva */
+img { max-width: 100%;}
+
+/* Tirar underline dos links */
+a { text-decoration: none;}
+
+/* Letra Caixa alta uppercase */
+h1 {
+    font-family: Raleway; sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
