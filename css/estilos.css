@@ -45,6 +45,7 @@ h1 a {
 }
 
 header {
+    height: 12vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,7 +111,7 @@ align-items: center;
 .destaque {
     /* imagem de fundo */
     background-image: url(../imagens/fundo-destaque.jpg);
-    height: 500px;
+    height: 88vh;
     display: flex;
     background-attachment: fixed;
     flex-direction: column;
