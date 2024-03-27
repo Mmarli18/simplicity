@@ -123,6 +123,10 @@ align-items: center;
 .destaque h2, .destaque p {
     color: var(--cor-clara);
     text-align: center;
+
+    /* Etapa 2 Aplicar animação */
+    animation-name: animaDestaque;
+    animation-duration: 3s;
 }
 
 /* Função CLAMP usado para deixar elementos responsivos fontes por ex. 
@@ -133,4 +137,18 @@ clamp (tamanhominimo,tamanhovariavel,tamanhomaximo)*/
 
 .destaque p {
     font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* Etapa 1 Regras de animação */
+
+@keyframes animaDestaque {
+    /* De (estado inicial, quando começa) */
+    from {opacity: 0;
+    transform: translateY(-300px);
+    }
+
+    /* Para (estado final, como termina) */
+    to{opacity: 1;
+
+    }
 }
