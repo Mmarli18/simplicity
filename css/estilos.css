@@ -125,4 +125,12 @@ align-items: center;
     text-align: center;
 }
 
+/* Função CLAMP usado para deixar elementos responsivos fontes por ex. 
+clamp (tamanhominimo,tamanhovariavel,tamanhomaximo)*/
 
+.destaque h2 {
+    font-size: clamp(3rem, 10vw, 7rem);}
+
+.destaque p {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+}
