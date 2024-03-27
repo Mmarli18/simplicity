@@ -64,6 +64,9 @@ nav h2 a:hover, nav h2 a:focus, .links-menu a:hover, .links-menu a:focus {
 /* Tirar icones de bolinhas da lista contidas na nav */
 .links-menu {
     list-style: none;
+
+    /* ATENÇÃO: Neste ponto fazemos com que o menu inicie escondidos (display-none) Posteriormente com a ajuda do css e Javascript, faremos os controles para exibir/esconder de forma alternada  */
+    display: none;
 }
 
 /* estilos para os links contidas na ul dentro do nav */
@@ -72,8 +75,24 @@ color: var(--cor-escura);
 font-weight: bold;
 display: flex;
 height: 50px;
-background-color: yellow;
 justify-content: center;
 align-items: center;
 
+}
+
+/* Regra será aplicada somente quando o menu for acionado para abertura */
+
+.links-menu.aberto {
+    /* Ativando o flex fazemos com que os links voltem a aparecer,  */
+    display: flex;
+
+    /* Fazemos com que eles fiquem um em cima do outro usando o flex-coluna */
+    flex-direction: column;
+
+    /* Ativando o position absolute e ajustamos a posição final dos links usando propriedades de coordenadas */
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    background-color: var(--cor-clara);
 }
