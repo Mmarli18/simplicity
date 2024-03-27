@@ -57,6 +57,23 @@ nav h2 a {
     display: inline-block;
 }
 
-nav h2 a:hover, nav h2 a:focus {
+nav h2 a:hover, nav h2 a:focus, .links-menu a:hover, .links-menu a:focus {
     background-color: var(--cor-intermediaria);
+}
+
+/* Tirar icones de bolinhas da lista contidas na nav */
+.links-menu {
+    list-style: none;
+}
+
+/* estilos para os links contidas na ul dentro do nav */
+.links-menu a{
+color: var(--cor-escura);
+font-weight: bold;
+display: flex;
+height: 50px;
+background-color: yellow;
+justify-content: center;
+align-items: center;
+
 }
