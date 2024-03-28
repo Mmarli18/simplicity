@@ -252,3 +252,36 @@ footer {
     border-bottom: solid 1px;
     margin-bottom: 1rem;
 }
+
+/* Formatando tabela */
+table {
+    border: solid 4px;
+    width: 80%;
+    margin: auto;
+    max-width: 600px;
+    border-collapse: collapse;
+}
+
+/* Formatando titulo da tabela */
+caption {
+    text-decoration: underline;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+
+}
+
+/* Formatando celulas */
+th, td { border: solid 1px; }
+
+th {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    border-color: var(--cor-escura);
+    padding: 0.8rem;
+}
+
+td {padding: 0.5rem;}
+
+/* Alternar cores alternadas na tabela */
+tr:nth-child(odd) {background: #b2b864;}
+tr:nth-child(even) {background: #FFF;}
