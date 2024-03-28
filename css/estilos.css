@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-* { box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 :root {
     --cor-titulo: #4d4d4d;
@@ -10,24 +12,35 @@
     --cor-intermediaria: #ECECEC;
 }
 
-html { font-size: 16px;}
+html {
+    font-size: 16px;
+}
 
-body { 
+body {
     color: var(--cor-texto);
     font-family: 'Noto Sans', sans-serif;
     background-color: var(--cor-clara);
 }
 
-body, h1, h2, p, figure, nav ul {
+body,
+h1,
+h2,
+p,
+figure,
+nav ul {
     margin: 0;
     padding: 0;
 }
 
 /* Para imagem ficar responsiva */
-img { max-width: 100%;}
+img {
+    max-width: 100%;
+}
 
 /* Tirar underline dos links */
-a { text-decoration: none;}
+a {
+    text-decoration: none;
+}
 
 /* Letra Caixa alta uppercase */
 h1 {
@@ -38,7 +51,7 @@ h1 {
 }
 
 h1 a {
-    color:var(--cor-clara);
+    color: var(--cor-clara);
     background-color: var(--cor-escura);
     padding: 0.3rem 1rem;
     border-radius: 6px;
@@ -50,7 +63,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-   
+
 nav h2 a {
     color: var(--cor-escura);
     font-size: 1.2rem;
@@ -58,7 +71,10 @@ nav h2 a {
     display: inline-block;
 }
 
-nav h2 a:hover, nav h2 a:focus, .links-menu a:hover, .links-menu a:focus {
+nav h2 a:hover,
+nav h2 a:focus,
+.links-menu a:hover,
+.links-menu a:focus {
     background-color: var(--cor-intermediaria);
 }
 
@@ -71,13 +87,13 @@ nav h2 a:hover, nav h2 a:focus, .links-menu a:hover, .links-menu a:focus {
 }
 
 /* estilos para os links contidas na ul dentro do nav */
-.links-menu a{
-color: var(--cor-escura);
-font-weight: bold;
-display: flex;
-height: 50px;
-justify-content: center;
-align-items: center;
+.links-menu a {
+    color: var(--cor-escura);
+    font-weight: bold;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -120,7 +136,8 @@ align-items: center;
 }
 
 /* Regras especificas para h2 e paragrafo contidos no destaque */
-.destaque h2, .destaque p {
+.destaque h2,
+.destaque p {
     color: var(--cor-clara);
     text-align: center;
 
@@ -133,7 +150,8 @@ align-items: center;
 clamp (tamanhominimo,tamanhovariavel,tamanhomaximo)*/
 
 .destaque h2 {
-    font-size: clamp(3rem, 10vw, 7rem);}
+    font-size: clamp(3rem, 10vw, 7rem);
+}
 
 .destaque p {
     font-size: clamp(1.5rem, 3vw, 3rem);
@@ -142,13 +160,79 @@ clamp (tamanhominimo,tamanhovariavel,tamanhomaximo)*/
 /* Etapa 1 Regras de animação */
 
 @keyframes animaDestaque {
+
     /* De (estado inicial, quando começa) */
-    from {opacity: 0;
-    transform: translateY(-300px);
+    from {
+        opacity: 0;
+        transform: translateY(-300px);
     }
 
     /* Para (estado final, como termina) */
-    to{opacity: 1;
+    to {
+        opacity: 1;
 
     }
+}
+
+article h2 {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-family: Raleway, sans-serif;
+    color: var(--cor-titulo);
+}
+
+.front-end,
+.historia,
+.localizacao {
+    text-align: center;
+}
+
+article p {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+}
+
+address {
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.historia h2 {
+    color: var(--cor-clara);
+    text-shadow: rgb(7, 7, 7) 2px 2px 10px;
+}
+
+.historia iframe {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.localizacao iframe {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/*  "limitador" com largura de 95vw e margem automática. Aplique esta classe no cabeçalho e no artigo front-end. */
+
+.limitador {
+    width: 95vw;
+    margin: auto;
+}
+
+footer {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    height: 30vh;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
