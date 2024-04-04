@@ -57,11 +57,19 @@ h1 a {
     border-radius: 6px;
 }
 
-header {
+/* limitador da div contida no header */
+header .limitador {
     height: 12vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--cor-clara);
+    z-index: 10;
 }
 
 nav h2 a {
@@ -312,6 +320,26 @@ td:last-child::before {
     content: "R$";
 }
 
+.imagens-servicos {
+    text-align: center;
+}
+
+.imagens-servicos img {
+    border-radius: 50%;
+    transform: scale(0.8);
+    filter: brightness(150%) blur(1px);
+    transition: 0.5s;
+}
+
+.imagens-servicos img:hover {
+    transform: scale(1);
+    filter: none;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+
+
 @media screen and (min-width:570px) {
     nav h2 {display: none;}
 
@@ -320,7 +348,7 @@ td:last-child::before {
     .links-menu li{width: 100%;}   
     .front-end img {height: 150px;}
     }
-    
+
 @media screen and (min-width: 1000px) {
     html { font-size: 18px; }
     .limitador { max-width: 1000px; }
