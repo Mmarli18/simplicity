@@ -271,7 +271,10 @@ caption {
 }
 
 /* Formatando celulas */
-th, td { border: solid 1px; }
+th,
+td {
+    border: solid 1px;
+}
 
 th {
     background-color: var(--cor-escura);
@@ -280,8 +283,46 @@ th {
     padding: 0.8rem;
 }
 
-td {padding: 0.5rem;}
+td {
+    padding: 0.5rem;
+}
 
 /* Alternar cores alternadas na tabela */
-tr:nth-child(odd) {background: #b2b864;}
-tr:nth-child(even) {background: #FFF;}
+tr:nth-child(odd) {
+    background: var(--cor-clara)
+}
+
+tr:nth-child(even) {
+    background: var(--cor-intermediaria)
+}
+
+/* Para alterar alinhamento ou outras estilizações no meio da tabela utilizar numero que se encontra a coluna */
+
+td:nth-child(2) {
+    text-align: center;
+}
+
+th:last-child,
+td:last-child {
+    text-align: right;
+}
+
+/* Inserindo um conteudo textual antes (Before) de cada valor (td:last-child)  */
+td:last-child::before {
+    content: "R$";
+}
+
+@media screen and (min-width:570px) {
+    nav h2 {display: none;}
+
+    .links-menu {display: flex;}
+     nav {width: 60%;}
+    .links-menu li{width: 100%;}   
+    .front-end img {height: 150px;}
+    }
+    
+@media screen and (min-width: 1000px) {
+    html { font-size: 18px; }
+    .limitador { max-width: 1000px; }
+}
+
