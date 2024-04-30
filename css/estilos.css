@@ -339,7 +339,6 @@ td:last-child::before {
 }
 
 
-
 @media screen and (min-width:570px) {
     nav h2 {display: none;}
 
