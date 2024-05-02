@@ -50,7 +50,7 @@
 
                 <div> <label for="cep">CEP: <br><span id="status"></span></label>
                     <!-- Usamos inputmode numerica para que o teclado virtual mostre numeros e para que não seja mostrado botões adicionais no navegador desktop -->
-                    <div id="area-do-cep"> <input inputmode="numeric" placeholder="Somente números" type="text" id="cep" name="cep"
+                    <div id="area-do-cep"> <input maxlength="8" inputmode="numeric" placeholder="Somente números" type="text" id="cep" name="cep"
                             required> <br> <button id="buscar">Buscar</button> </div>
                 </div>
                 <div class="campos-restantes"> <label for="endereco">Endereço:</label> <input type="text" id="endereco"
