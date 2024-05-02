@@ -12,7 +12,7 @@ const botaoBuscar = formulario.querySelector("#buscar");
 const mensagemStatus = formulario.querySelector("#status");
 
 /* Detectando quando o botão de buscar CEP é acionado */
-botaoBuscar.addEventListener("click", function (event) {
+botaoBuscar.addEventListener("click", async function (event) {
     /* Anula o redirecionamento padrão de recarregamento da pagina. Sempre acontece quando trabalha com <a> <form>  */
     event.preventDefault();
     /* Verificando se o cep Não TEM 8 digitos */
@@ -34,11 +34,34 @@ botaoBuscar.addEventListener("click", function (event) {
     */
 
     // Etapa 1: Preparar a url da API com o cep informado
+    let url = `https://viacep.com.br/ws/${cepInformado}/json/`;
 
     // Etapa 2: Acessar a API com a URL e aguardar o retorno dela
-
+    const resposta = await fetch(url);
+   
     // Etapa 3: Extrair os dados da resposta da API em formato JSON
+    const dados = await resposta.json();
 
     // Etapa 4: Lidar com os dados (em caso de erro ou sucesso)
+    /* Se existir a string erro no objeto dados */
+    if("erro" in dados ){
+        mensagemStatus.textContent = "CEP inexistente!";
+        mensagemStatus.style.color = "red";
+    } else { 
+        // Senão o CEP existe
+        mensagemStatus.textContent = "CEP encontrado!";
+        mensagemStatus.style.color = "blue";
 
+        // Tornando os campos restantes visiveis ao usuario
+        const camposRestantes = formulario.querySelectorAll(`.campos-restantes`);
+    /* Removendo a classe via loop (Isso fará com que os campos aparecerem novamente)*/
+        for (const campo of camposRestantes) {
+            campo.classList.remove("campos-restantes");
+        }
+        // Atribuindo os dados a cada grupo
+           campoEndereco.value = dados.logradouro;
+           campoBairro.value = dados.bairro;
+           campoCidade.value = dados.localidade;
+           campoEstado.value = dados.uf; 
+    }
 });
