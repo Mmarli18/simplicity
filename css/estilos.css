@@ -338,6 +338,57 @@ td:last-child::before {
     cursor: pointer;
 }
 
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+input, select, textarea {
+    border: 0;
+    padding: 4px;
+    height: 40px;
+    border-radius: 4px;
+
+}
+
+textarea { height: auto; }
+
+form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 30%;
+}
+
+/* asteristico * é um seletor universal - Incluindo pseudo-classe :not permite criar exceções a classe, nesse exemplo estamos dizendo para pegar tudo que esta dentro da div execeto o label e aplicar 70% de largura*/
+
+form div *:not(label){
+    width: 70%;
+}
+
+button {
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    border: none;
+    font-weight: bold;
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+button:hover, button:focus {
+    background-color: var(--cor-clara);
+    color: var(--cor-escura);
+    box-shadow: var(--cor-escura) 0 0 2px;
+}
 
 @media screen and (min-width:570px) {
     nav h2 {display: none;}
