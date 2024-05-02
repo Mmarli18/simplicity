@@ -30,11 +30,11 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque consectetur sunt alias dolore veniam harum
                 numquam dolor voluptatibus similique libero, natus cupiditate labore dolores tempora possimus corrupti
                 soluta eligendi obcaecati.</p>
-                <!-- Metodo: maneira como os dados são transmitidos no formulario. Tipo post é mais seguro, informações são enviada de forma oculta no corpo do formulario. Tipo Get (envia pela url)-->
+            <!-- Metodo: maneira como os dados são transmitidos no formulario. Tipo post é mais seguro, informações são enviada de forma oculta no corpo do formulario. Tipo Get (envia pela url)-->
 
-                    <!-- required deixa o preenchimento obrigatorio -->
-                <form action="" method="post">
-                    <div>
+            <!-- required deixa o preenchimento obrigatorio -->
+            <form action="" method="post">
+                <div>
                     <label for="nome">Nome:</label>
                     <input required placeholder="Digite o nome completo" type="text" name="nome" id="nome">
                 </div>
@@ -48,6 +48,19 @@
                     <input type="date" name="nascimento" id="nascimento">
                 </div>
 
+                <div> <label for="cep">CEP: <br><span id="status"></span></label>
+                    <!-- Usamos inputmode numerica para que o teclado virtual mostre numeros e para que não seja mostrado botões adicionais no navegador desktop -->
+                    <div id="area-do-cep"> <input inputmode="numeric" placeholder="Somente números" type="text" id="cep" name="cep"
+                            required> <br> <button id="buscar">Buscar</button> </div>
+                </div>
+                <div class="campos-restantes"> <label for="endereco">Endereço:</label> <input type="text" id="endereco"
+                        name="endereco" size="30"></div>
+                <div class="campos-restantes"> <label for="bairro">Bairro:</label> <input type="text" id="bairro"
+                        name="bairro"></div>
+                <div class="campos-restantes"> <label for="cidade">Cidade:</label> <input type="text" id="cidade"
+                        name="cidade"></div>
+                <div class="campos-restantes"> <label for="estado">Estado:</label> <input type="text" id="estado"
+                        name="estado"></div>
                 <div>
                     <label for="telefone">Telefone:</label>
                     <input type="tel" nome="telefone" id="telefone">
@@ -71,7 +84,7 @@
                 </div>
 
                 <button type="submit">Enviar dados</button>
-                </form>
+            </form>
         </article>
     </main>
     <footer>

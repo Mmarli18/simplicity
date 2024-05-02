@@ -348,6 +348,7 @@ input, select, textarea {
     padding: 4px;
     height: 40px;
     border-radius: 4px;
+    background-color: var(--cor-clara);
 
 }
 
@@ -366,6 +367,8 @@ label {
     font-weight: bold;
     width: 30%;
 }
+
+/* Se quiser mudar o tipo de borda que aparece quando a caixa ganha foco utilizar o outline */
 
 /* asteristico * é um seletor universal - Incluindo pseudo-classe :not permite criar exceções a classe, nesse exemplo estamos dizendo para pegar tudo que esta dentro da div execeto o label e aplicar 70% de largura*/
 
@@ -389,6 +392,15 @@ button:hover, button:focus {
     color: var(--cor-escura);
     box-shadow: var(--cor-escura) 0 0 2px;
 }
+
+#cep { width: 60%; }
+#buscar {
+    width: 39%;
+    padding: 12px;
+}
+
+.campos-restantes { display: none;}
+
 
 @media screen and (min-width:570px) {
     nav h2 {display: none;}
