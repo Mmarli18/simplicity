@@ -34,13 +34,13 @@
             <h2>Serviços</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque consectetur sunt alias dolore veniam harum numquam dolor voluptatibus similique libero, natus cupiditate labore dolores tempora possimus corrupti soluta eligendi obcaecati.</p>
             <figure class="imagens-servicos">
-                <a href="imagens/desenvolvimento-web.jpg">
+                <a data-title="Soluções em Web Designs" href="imagens/desenvolvimento-web.jpg" data-lightbox="galeria">
                 <img src="imagens/desenvolvimento-web-mini.jpg" alt="desenvolvimento web"></a>
-                <a href="imagens/design-grafico.jpg">
+                <a data-title="Etapas de criação" href="imagens/design-grafico.jpg" data-lightbox="galeria">
                 <img src="imagens/design-grafico-mini.jpg" alt="design grafico"></a>
-                <a href="imagens/marketing-digital.jpg">
+                <a data-title="Soluções em Marketing Digital" href="imagens/marketing-digital.jpg" data-lightbox="galeria">
                 <img src="imagens/marketing-digital-mini.jpg" alt="marketing"></a>
-                <a href="imagens/consultoria-treinamento.jpg">
+                <a data-title="Nossos especialistas" href="imagens/consultoria-treinamento.jpg" data-lightbox="galeria">
                 <img src="imagens/consultoria-treinamento-mini.jpg" alt="consultoria"></a>
             </div>
             </figure>
@@ -59,6 +59,15 @@
 
         <!-- Importando JS do plugin lightbox -->
     <script src="lightbox/js/lightbox.min.js"></script>
+
+    <script>
+    lightbox.option({
+      resizeDuration: 200,
+      wrapAround: true,
+      albumLabel: "Foto %1 de %2"
+    })
+</script>
+
 
     <script src="js/menu.js"></script>
 </body>

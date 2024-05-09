@@ -70,3 +70,35 @@ botaoBuscar.addEventListener("click", async function (event) {
            campoEstado.value = dados.uf; 
     }
 });
+
+
+/* Script do Formspree */
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("status-do-envio");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: formulario.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Mensagem enviada com SUCESSO!";
+          formulario.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Ops! Ocorreu um problema ao enviar seu formulário"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! Ocorreu um problema ao enviar seu formulário"
+      });
+    }
+    formulario.addEventListener("submit", handleSubmit)
