@@ -343,7 +343,9 @@ form {
     margin: auto;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     border: 0;
     padding: 4px;
     height: 40px;
@@ -352,7 +354,9 @@ input, select, textarea {
 
 }
 
-textarea { height: auto; }
+textarea {
+    height: auto;
+}
 
 form div {
     display: flex;
@@ -372,7 +376,7 @@ label {
 
 /* asteristico * é um seletor universal - Incluindo pseudo-classe :not permite criar exceções a classe, nesse exemplo estamos dizendo para pegar tudo que esta dentro da div execeto o label e aplicar 70% de largura*/
 
-form div *:not(label){
+form div *:not(label) {
     width: 70%;
 }
 
@@ -387,37 +391,60 @@ button {
     transition: 500ms;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
     background-color: var(--cor-clara);
     color: var(--cor-escura);
     box-shadow: var(--cor-escura) 0 0 2px;
 }
 
-#cep { width: 60%; }
+#cep {
+    width: 60%;
+}
+
 #buscar {
     width: 39%;
     padding: 12px;
 }
 
-.campos-restantes { display: none;}
+.campos-restantes {
+    display: none;
+}
 
 #status-do-envio {
-text-align: center;
-color: blue;
-padding: 1rem;
+    text-align: center;
+    color: blue;
+    padding: 1rem;
 }
 
 @media screen and (min-width:570px) {
-    nav h2 {display: none;}
-
-    .links-menu {display: flex;}
-     nav {width: 60%;}
-    .links-menu li{width: 100%;}   
-    .front-end img {height: 150px;}
+    nav h2 {
+        display: none;
     }
 
-@media screen and (min-width: 1000px) {
-    html { font-size: 18px; }
-    .limitador { max-width: 1000px; }
+    .links-menu {
+        display: flex;
+    }
+
+    nav {
+        width: 60%;
+    }
+
+    .links-menu li {
+        width: 100%;
+    }
+
+    .front-end img {
+        height: 150px;
+    }
 }
 
+@media screen and (min-width: 1000px) {
+    html {
+        font-size: 18px;
+    }
+
+    .limitador {
+        max-width: 1000px;
+    }
+}

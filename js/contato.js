@@ -13,7 +13,7 @@ const botaoBuscar = formulario.querySelector("#buscar");
 const mensagemStatus = formulario.querySelector("#status");
 
 /* Seleção dos campos (via jQuery)e ativação das máscaras via jQuery */
-$(campoCep).mask("00000-000"); 
+$(campoCep).mask("00000-000");
 $(campoTelefone).mask("(00) 0000-0000");
 
 /* Detectando quando o botão de buscar CEP é acionado */
@@ -43,62 +43,62 @@ botaoBuscar.addEventListener("click", async function (event) {
 
     // Etapa 2: Acessar a API com a URL e aguardar o retorno dela
     const resposta = await fetch(url);
-   
+
     // Etapa 3: Extrair os dados da resposta da API em formato JSON
     const dados = await resposta.json();
 
     // Etapa 4: Lidar com os dados (em caso de erro ou sucesso)
     /* Se existir a string erro no objeto dados */
-    if("erro" in dados ){
+    if ("erro" in dados) {
         mensagemStatus.textContent = "CEP inexistente!";
         mensagemStatus.style.color = "red";
-    } else { 
+    } else {
         // Senão o CEP existe
         mensagemStatus.textContent = "CEP encontrado!";
         mensagemStatus.style.color = "blue";
 
         // Tornando os campos restantes visiveis ao usuario
         const camposRestantes = formulario.querySelectorAll(`.campos-restantes`);
-    /* Removendo a classe via loop (Isso fará com que os campos aparecerem novamente)*/
+        /* Removendo a classe via loop (Isso fará com que os campos aparecerem novamente)*/
         for (const campo of camposRestantes) {
             campo.classList.remove("campos-restantes");
         }
         // Atribuindo os dados a cada grupo
-           campoEndereco.value = dados.logradouro;
-           campoBairro.value = dados.bairro;
-           campoCidade.value = dados.localidade;
-           campoEstado.value = dados.uf; 
+        campoEndereco.value = dados.logradouro;
+        campoBairro.value = dados.bairro;
+        campoCidade.value = dados.localidade;
+        campoEstado.value = dados.uf;
     }
 });
 
 
 /* Script do Formspree */
-    
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("status-do-envio");
-      var data = new FormData(event.target);
-      fetch(event.target.action, {
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("status-do-envio");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
         method: formulario.method,
         body: data,
         headers: {
             'Accept': 'application/json'
         }
-      }).then(response => {
+    }).then(response => {
         if (response.ok) {
-          status.innerHTML = "Mensagem enviada com SUCESSO!";
-          formulario.reset()
+            status.innerHTML = "Mensagem enviada com SUCESSO!";
+            formulario.reset()
         } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-            } else {
-              status.innerHTML = "Ops! Ocorreu um problema ao enviar seu formulário"
-            }
-          })
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                    status.innerHTML = "Ops! Ocorreu um problema ao enviar seu formulário"
+                }
+            })
         }
-      }).catch(error => {
+    }).catch(error => {
         status.innerHTML = "Oops! Ocorreu um problema ao enviar seu formulário"
-      });
-    }
-    formulario.addEventListener("submit", handleSubmit)
+    });
+}
+formulario.addEventListener("submit", handleSubmit)
