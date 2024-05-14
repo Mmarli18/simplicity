@@ -54,7 +54,8 @@ h1 a {
     color: var(--cor-clara);
     background-color: var(--cor-escura);
     padding: 0.3rem 1rem;
-    border-radius: 6px;
+    border-radius: 10px;
+    box-shadow: var(--cor-escura) 0 0 30px;
 }
 
 /* limitador da div contida no header */
